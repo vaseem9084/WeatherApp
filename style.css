@@ -1,0 +1,261 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   MAIN BODY
+========================= */
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.50);
+    z-index: -1;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.container{
+    margin-bottom: 20px;
+}
+
+.container h1{
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+}
+
+/* =========================
+   FORM
+========================= */
+
+form{
+    margin-bottom: 30px;
+    display: flex;
+    gap: 12px;
+}
+
+form input{
+    padding: 14px 18px;
+    width: 280px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 14px;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255,255,255,0.18);
+    color: white;
+    backdrop-filter: blur(12px);
+    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+form input:focus{
+    transform: scale(1.03);
+    border: 2px solid rgba(255,255,255,0.6);
+}
+
+form input::placeholder{
+    color: rgba(255,255,255,0.85);
+}
+
+form button{
+    padding: 14px 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 14px;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+form button:hover{
+    background: rgba(0,0,0,0.85);
+    transform: scale(1.05);
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-message{
+    width: 700px;
+    background: rgba(255, 0, 0, 0.18);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   WEATHER CARD
+========================= */
+
+.weather{
+    width: 700px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(14px);
+    border-radius: 25px;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    color: white;
+    animation: fadeIn 0.5s ease;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.left h2{
+    font-size: 70px;
+    font-weight: 700;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+}
+
+.left h3{
+    font-size: 36px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+}
+
+.left p{
+    margin-top: 12px;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.right{
+    text-align: center;
+}
+
+.icon img{
+    width: 120px;
+    filter: drop-shadow(2px 2px 10px rgba(0,0,0,0.5));
+}
+
+.condition p{
+    margin-top: 12px;
+    font-size: 18px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width: 768px){
+
+    .weather{
+        width: 95%;
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .error-message{
+        width: 95%;
+    }
+
+    form{
+        flex-direction: column;
+        width: 95%;
+    }
+
+    form input{
+        width: 100%;
+    }
+
+    form button{
+        width: 100%;
+    }
+
+    .left h2{
+        font-size: 50px;
+    }
+
+    .left h3{
+        font-size: 30px;
+    }
+
+    .left p{
+        font-size: 18px;
+    }
+
+    .container h1{
+        font-size: 38px;
+    }
+}
